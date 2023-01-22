@@ -1,4 +1,12 @@
-import './globals.css'
+import GlobalNav from "@/components/global-nav";
+import RootContainer from "@/components/root-container";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: "400",
+  preload: true,
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +16,10 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+
+      <body className={inter.className}>
+        <RootContainer>{children}</RootContainer>
+      </body>
     </html>
-  )
+  );
 }
